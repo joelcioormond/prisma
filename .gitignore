@@ -1,0 +1,61 @@
+# Ambientes virtuais
+venv/
+.venv/
+env/
+.env/
+
+# Dependências do Node.js
+node_modules/
+
+# Arquivos de ambiente
+.env
+*.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Arquivos de cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# scripts
+scripts/
+
+# Arquivos de build do frontend
+build/
+dist/
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Banco de dados SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploads
+uploads/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# pytest
+.pytest_cache/
+

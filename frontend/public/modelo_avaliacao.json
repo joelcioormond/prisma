@@ -1,0 +1,941 @@
+{
+  "metadata": {
+    "versao": "4.0",
+    "baseado_em": "MODELO_GESTAO_RISCOS_Ver2.xlsx",
+    "data_criacao": "2025-08-29",
+    "descricao": "Modelo completo de maturidade em gestão de riscos CGE-MT",
+    "niveis": {
+      "1": "Inicial / Ad Hoc (não implementado)",
+      "2": "Repetível / Básico",
+      "3": "Definido / Gerenciado",
+      "4": "Quantitativamente Gerenciado / Medido",
+      "5": "Otimizado / Inovador"
+    }
+  },
+  "kpas_por_nivel": {
+    "2": [
+      {
+        "codigo": "KPA 2.1",
+        "area": "Governança de Riscos",
+        "descricao": "Existe alguma consciência institucional sobre riscos, mas sem políticas definidas ou diretrizes formais.",
+        "objetivo": "Estruturar a governança da gestão de riscos com apoio formal da alta gestão, criando as bases para institucionalização do tema na organização.",
+        "atividades": [
+          {
+            "id": "2.1.1",
+            "descricao": "Elaborar e aprovar uma política de gestão de riscos alinhada à missão institucional.",
+            "evidencias_instituicao": "Política de gestão de riscos aprovada por portaria",
+			"evidencias_institucionalizacao": "Demonstração da utilização prática da política, além da definição formal",
+            "orientacoes": "A política deve estar assinada e disponível institucionalmente (intranet, site, mural etc.)"
+          },
+          {
+            "id": "2.1.2",
+            "descricao": "Designar formalmente um comitê ou responsável pela gestão de riscos, com autoridade e acesso à alta gestão.",
+            "evidencias_instituicao": "Portaria ou ato de designação de responsável/comitê",
+			"evidencias_institucionalizacao": "Atas e registros de reuniões realizadas",
+            "orientacoes": "O responsável ou comitê precisa ter suas atribuições definidas em documento oficial"
+          },
+          {
+            "id": "2.1.3",
+            "descricao": "Divulgar a política de gestão de riscos a todos os servidores (comunicados, apresentações, intranet etc.).",
+            "evidencias_instituicao": "Norma que estabeleceu a política/plano de comunicação que a contemple",
+			"evidencias_institucionalizacao": "Campanhas específicas sobre a política de gestão de riscos",
+            "orientacoes": "Material utilizado nas campanhas, links para páginas na internet"
+          },
+          {
+            "id": "2.1.4",
+            "descricao": "Incluir o tema 'gestão de riscos' na pauta de reuniões da alta gestão.",
+            "evidencias_instituicao": "Fluxo de governança institucional com responsabilidades definidas",
+			"evidencias_institucionalizacao": "Comunicação entre os responsáveis pela governanaça que demonstre que se segue o fluxo definido",
+            "orientacoes": "Deve haver evidência clara de que o tema é tratado pela alta gestão (atas, apresentações, deliberações)"
+          },
+          {
+            "id": "2.1.5",
+            "descricao": "Capacitar gestores e responsáveis sobre os fundamentos da ISO 31000.",
+            "evidencias_instituicao": "Plano de capacitação",
+			"evidencias_institucionalizacao": "Registro das capacitações realizadas",
+            "orientacoes": "Procurar demonstar que houve ações no sentido de realizar essas ações, por meio de plano de capacitação, agenda da realização do curso, registro da capacitação e lista de presença"
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 2.2",
+        "area": "Identificação de Riscos",
+        "descricao": "São usados métodos simples (ex: checklists) de forma eventual e não documentada",
+        "objetivo": "Implementação de práticas estruturadas e iniciais para identificação de riscos nos processos e áreas da organização",
+        "atividades": [
+          {
+            "id": "2.2.1",
+            "descricao": "Definir metodologia simples para identificação",
+            "evidencias_instituicao": "Criar ou adotar modelo com orientações básicas para identificação de riscos (ex: formulário, matriz, checklist)",
+			"evidencias_institucionalizacao": "Documento com os critérios aprovados ou incluídos na política/metodologia",
+            "orientacoes": "Deve-se buscar organizar os riscos por processo, unidade ou projeto"
+          },
+          {
+            "id": "2.2.2",
+            "descricao": "Aplicar a identificação em áreas ou processos-piloto",
+            "evidencias_instituicao": "Definição da área que se pretendia fazer a identificação de riscos",
+			"evidencias_institucionalizacao":"Executar atividades de mapeamento de riscos em pelo menos uma unidade ou processo-chave da organização; Matriz de identificação de riscos",
+            "orientacoes": "Deve-se buscar organizar os riscos por processo, unidade ou projeto"
+          },
+          {
+            "id": "2.2.3",
+            "descricao": "Registrar e arquivar os riscos identificados",
+            "evidencias_instituicao": "Definição da metodologia de rigistro e arquivamento dos riscos identificados",
+			"evidencias_institucionalizacao":"Criar mecanismo mínimo para organizar e consultar os riscos mapeados (pode ser uma planilha compartilhada, por exemplo)",
+            "orientacoes": "Utilize linguagens acessíveis e envolva as equipes diretamente responsáveis"
+          },
+          {
+            "id": "2.2.4",
+            "descricao": "Capacitar servidores das áreas envolvidas sobre como identificar e registrar riscos",
+            "evidencias_instituicao": "Plano de capacitação",
+			"evidencias_institucionalizacao":"Realizar evento de capacitação dos servidores sobre o básico de gestão de riscos, registro do evento, registro de presença dos participantes",
+            "orientacoes": "O foco é dar os primeiros passos na identificação estruturada, mesmo que ainda parcial"
+          },
+          {
+            "id": "2.2.5",
+            "descricao": "Sensibilizar servidores sobre o tema",
+            "evidencias_instituicao": "Plano de capacitação",
+			"evidencias_institucionalizacao":"Realizar evento, oficina ou comunicação institucional sobre identificação de riscos. (pode ser informal, com foco na sensibilização inicial)",
+            "orientacoes": "Utilize linguagens acessíveis e envolva as equipes diretamente responsáveis"
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 2.3",
+        "area": "Análise e Avaliação de Riscos",
+        "descricao": "Critérios básicos são usados, sem padronização nem escala clara",
+        "objetivo": "Estabelecimento dos primeiros critérios e práticas para avaliar riscos identificados, considerando impacto e probabilidade",
+        "atividades": [
+          {
+            "id": "2.3.1",
+            "descricao": "Definir critérios básicos de impacto e probabilidade",
+            "evidencias_instituicao": "Criar ou adotar critérios simples que ajudem a classificar a gravidade e a chance de ocorrência dos riscos",
+			"evidencias_institucionalizacao":"Documentos que demonstrem a utiliação dos critérios de classificação, matriz de riscos preenchida com coluna de impacto e probabilidade, por exemplo",
+            "orientacoes": "Critérios devem ser simples, compreensíveis e aplicáveis por não especialistas;"
+          },
+          {
+            "id": "2.3.2",
+            "descricao": "Aplicar os critérios aos riscos identificados",
+            "evidencias_instituicao": "Classificar os riscos com base nos critérios definidos, atribuindo níveis de prioridade",
+			"evidencias_institucionalizacao":"Matriz de riscos",
+            "orientacoes": "Evite sofisticar excessivamente neste nível. Exemplo de Escalas de avaliação: baixo, médio, alto"
+          },
+          {
+            "id": "2.3.3",
+            "descricao": "Justificar a classificação atribuída",
+            "evidencias_instituicao": "Explicitar os motivos da pontuação atribuída para cada risco, mesmo que de forma simples",
+			"evidencias_institucionalizacao":"Matriz de riscos",
+            "orientacoes": "Foque na adesão e entendimento institucional"
+          },
+          {
+            "id": "2.3.4",
+            "descricao": "Utilizar uma matriz de risco padronizada",
+            "evidencias_instituicao": "Aplicar visualmente a matriz que combine impacto x probabilidade, para apoiar a priorização de riscos. (mesmo que em formato simples)",
+			"evidencias_institucionalizacao":"Matriz de risco institucional; tabela explicativa",
+            "orientacoes": "Evite sofisticar excessivamente neste nível"
+          },
+          {
+            "id": "2.3.5",
+            "descricao": "Disseminar os critérios para todas as áreas envolvidas.",
+            "evidencias_instituicao": "Dar conhecimento dos critérios em toda a organização",
+			"evidencias_institucionalizacao":"Divulgação institucional dos critérios definidos",
+            "orientacoes": "Relatório descritivo da avaliação de risco; Arquivo com matriz de risco em uso; documentação com decisões baseadas na priorização visual."
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 2.4",
+        "area": "Tratamento de Riscos",
+        "descricao": "Existem ações básicas, mas sem plano de tratamento formalizado",
+        "objetivo": "Começar a organizar respostas aos riscos com base em ações identificadas",
+        "atividades": [
+          {
+            "id": "2.4.1",
+            "descricao": "Plano de tratamento básico para riscos elaborado",
+            "evidencias_instituicao": "Plano utilizado para tratamento dos riscos",
+			"evidencias_institucionalizacao":"Registros com ações de resposta vinculadas a riscos",
+            "orientacoes": "A priorização dos riscos deve orientar quais ações serão tratadas primeiro."
+          },
+          {
+            "id": "2.4.2",
+            "descricao": "Designar responsáveis pelas ações e os prazos",
+            "evidencias_instituicao": "Planilha ou formulário com responsável, prazo e status",
+			"evidencias_institucionalizacao":"Acompanhamento das ações da planilha",
+            "orientacoes": "Definir datas ou períodos para verificar se as ações de tratamento estão sendo executadas"
+          },
+          {
+            "id": "2.4.3",
+            "descricao": "Registrar essas ações junto à lista de riscos",
+            "evidencias_instituicao": "Lista de riscos com as ações estabelecidas",
+			"evidencias_institucionalizacao":"Acompanhamento periódico das ações",
+            "orientacoes": "As ações devem ser viáveis dentro da realidade atual da organização"
+          },
+          {
+            "id": "2.4.4",
+            "descricao": "Avaliar a viabilidade das ações propostas",
+            "evidencias_instituicao": "Critérios de decisão sobre como tratar riscos",
+			"evidencias_institucionalizacao":"Utilização dos critérios definidos",
+            "orientacoes": "Deve-se definir os critérios e utilizá-los"
+          },
+          {
+            "id": "2.4.5",
+            "descricao": "Discutir com gestores as ações possíveis em função dos recursos disponíveis",
+            "evidencias_instituicao": "Registro de que houve a discussão",
+			"evidencias_institucionalizacao":"Reunião para discussão com os gestores;\nFórum eletrônico interno para discussão",
+            "orientacoes": "As ações devem ser viáveis dentro da realidade atual da organização"
+          },
+          {
+            "id": "2.4.6",
+            "descricao": "Formalizar o plano com aprovação interna",
+            "evidencias_instituicao": "Encaminhar o plano para ciência ou aprovação da gestão ou instância competente",
+			"evidencias_institucionalizacao":"Ciência ou aprovação do plano",
+            "orientacoes": "Ao final do processo, deve-se formalizar o plano e aprovar com o gestor"
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 2.5",
+        "area": "Monitoramento e Análise Crítica",
+        "descricao": "Monitoramento ocorre pontualmente, sem registro estruturado",
+        "objetivo": "Adoção de mecanismos básicos e periódicos para verificar se os riscos e ações de tratamento estão sendo acompanhados e atualizados",
+        "atividades": [
+          {
+            "id": "2.5.1",
+            "descricao": "Periodicidade de revisões simples das listas de riscos definida",
+            "evidencias_instituicao": "Estabelecer uma frequência mínima (ex: anual ou semestral) para revisar os riscos e suas classificações",
+		  "evidencias_institucionalizacao":"Realização das revisões com a frequência definida",
+            "orientacoes": "Registrar mudanças, mesmo que manuais, é essencial neste estágio"
+          },
+          {
+            "id": "2.5.2",
+            "descricao": "Verificar se os responsáveis estão executando as ações definidas",
+            "evidencias_instituicao": "Registro do acompanhamento das ações",
+			"evidencias_institucionalizacao":"Registros de cumprimento das ações nos prazos definidos",
+            "orientacoes": "O foco é criar cultura de acompanhamento periódico"
+          },
+          {
+            "id": "2.5.3",
+            "descricao": "Registrar alterações nos riscos (por exemplo: risco eliminado ou novo risco)",
+            "evidencias_instituicao": "Registro de monitoramento dos riscos",
+			"evidencias_institucionalizacao":"Registro de alterações específicas, quando necessário (mudança de contexto, ação concluída, novo risco etc.)",
+            "orientacoes": "Deve haver monitoramento para garantir a efetividade da gestão dos riscos"
+          },
+          {
+            "id": "2.5.4",
+            "descricao": "Produzir relatórios de atualização",
+            "evidencias_instituicao": "Relatórios ou atas de reuniões com atualização de riscos;",
+			"evidencias_institucionalizacao":"Participação dos responsáveis nas reuniões",
+            "orientacoes": "Não há necessidade de ser um relatório complexo, mas deve haver um, ainda que simples"
+          },
+          {
+            "id": "2.5.5",
+            "descricao": "Comunicar os resultados do monitoramento",
+            "evidencias_instituicao": "Informar as áreas envolvidas ou gestores sobre os resultados das revisões (pode ser por e-mail, reunião, boletim etc.)",
+			"evidencias_institucionalizacao":"Regsitros de reuniões com os gestores sobre os comunicados feitos",
+            "orientacoes": "Levar ao conhecimento dos gestores os resultados para subsidiar discussões"
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 2.6",
+        "area": "Integração Organizacional",
+        "descricao": "Há esforço de articulação com setores, mas ainda fragmentado",
+        "objetivo": "Primeiros passos para inserir a gestão de riscos nos processos, documentos e práticas organizacionais, ainda que de forma pontual ou experimental",
+        "atividades": [
+          {
+            "id": "2.6.1",
+            "descricao": "Inserir a gestão de riscos em pelo menos um processo de trabalho",
+            "evidencias_instituicao": "Definição de processo piloto",
+			"evidencias_institucionalizacao":"Aplicar o processo de gestão de riscos a um processo, projeto ou área da organização (ex: planejamento, compras, contratos)",
+            "orientacoes": "Evite que a gestão de riscos fique restrita à área de controle interno;\n* Trabalhe a visão de risco transversal à organização;\n* Use exemplos práticos para engajar os setores na discussão conjunta dos riscos."
+          },
+          {
+            "id": "2.6.2",
+            "descricao": "Citar a gestão de riscos em documento oficial da organização",
+            "evidencias_instituicao": "Incluir menção à gestão de riscos em, ao menos, um instrumento organizacional, como plano institucional, relatório de gestão, planejamento estratégico etc",
+			"evidencias_institucionalizacao":"Incluir menção à gestão de riscos em mais de um instrumento organizacional, como plano institucional, relatório de gestão, planejamento estratégico etc",
+            "orientacoes": "Evite que a gestão de riscos fique restrita à área de controle interno"
+          },
+          {
+            "id": "2.6.3",
+            "descricao": "Comunicar internamente a importância da integração",
+            "evidencias_instituicao": "Divulgar orientações ou conteúdos para conscientização sobre a importância da gestão de riscos nos processos",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "2.6.4",
+            "descricao": "Envolver mais de uma área ou setor",
+            "evidencias_instituicao": "Engajar diferentes áreas no processo de gestão de riscos, mesmo que de forma pontual (em oficinas, levantamentos etc.)",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "codigo": "KPA 3.1",
+        "area": "Governança de Riscos",
+        "descricao": "A organização possui política de gestão de riscos, papéis formalizados e patrocínio ativo da liderança",
+        "objetivo": "Consolidação de uma estrutura organizacional capaz de conduzir a gestão de riscos de forma sistemática, com maior engajamento institucional, articulação entre setores e início da integração com os objetivos estratégicos",
+        "atividades": [
+          {
+            "id": "3.1.1",
+            "descricao": "Criar ou fortalecer comitê de riscos institucional",
+            "evidencias_instituicao": "Estabelecer (ou formalizar) instância colegiada para tratar da governança de riscos com participação de múltiplos setores",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "É preciso ter uma estrutura mínima formalizada, com rotinas de acompanhamento e decisão, buscando integração inicial com os objetivos estratégicos.\nIsso fortalece a responsabilização compartilhada (gestão de riscos envole todos os processos e servidores), dá sustentação técnica e política às decisões, permite o aperfeiçoamento da gestão de riscos, começando a consolidar uma cultura institucional.\nPara isso, não é necessário ser um comitê grande ou complexo, mas precisa ter representatividade e atuação periódica definida. As reuniões de acompanhamento também não precisam ser formais demais, porque o objetivo aqui é ter o registro das decisões e o compromisso de revisar os riscos e planos. A vinculação com a estratégia, da mesma forma, pode ser simples neste nível: apontar no plano institucional que certos riscos afetam metas já é um bom começo. Não precisa se preocupar incialmente com orçamento grande ou equipe exclusiva, sendo importante aqui prever algum tempo ou recurso (por exempl, espaço na pauta, plano de capacitação, designação parcial de carga horária). Ainda, é preciso que se valorize a participação da liderança, de forma que o comitê ou grupo deve ser reconhecido internamente e ter foça institucional.\n\nEvite: criar comitê só \"no papel\", sem reuiões ou efeito prático; copiar uma política de outra organização sem adaptá-la à realidade local; achar que só servidores da alta gestão pode participar (incluir técnicos fortalece o uso real da estrutura); limitar a participação a setores administrativos (riscos estão em todas as áreas, inclusive as finalísticas)\n\nBusque: manter um repositório (Drive, intranet, rede interna, sistema interno) com as atas e documentos do comitê; faça pelo menos reuniões semestrais com pauta definida; inclua os responsáveis pela gestão de riscos nos planos de ação estratégicos; promova um alinhamento com os setores de planejamento e da segunda linha (controle interno, jurídico etc.)"
+          },
+          {
+            "id": "3.1.2",
+            "descricao": "Promover reuniões periódicas com responsáveis",
+            "evidencias_instituicao": "Realizar encontros formais e regulares com os responsáveis pela gestão de riscos para deliberar e acompanhar os avanços",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "3.1.3",
+            "descricao": "Associar a política de riscos aos objetivos institucionais",
+            "evidencias_instituicao": "Relacionar a política e estrutura de gestão de riscos com os objetivos estratégicos da organização",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "3.1.4",
+            "descricao": "Prever recursos para a estrutura de gestão de riscos",
+            "evidencias_instituicao": "Alocar orçamento, tempo ou pessoal dedicado à gestão de riscos no planejamento institucional",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 3.2",
+        "area": "Identificação Ampliada de Riscos",
+        "descricao": "Métodos estruturados são aplicados regularmente e documentados",
+        "objetivo": "Expansão da prática de identificação de riscos para múltiplas áreas, com uso de ferramentas básicas e maior participação dos setores da organização",
+        "atividades": [
+          {
+            "id": "3.2.1",
+            "descricao": "Estender a identificação para mais áreas/setores",
+            "evidencias_instituicao": "Realizar o mapeamento de riscos em diferentes unidades organizacionais, não se limitando a áreas-piloto",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "Buscar fortalecer a identificação de riscos como atividade contínua, descentralizada e preventiva, envolvendo diferentes unidades e utilizando múltiplas fontes de informação. Isso tem como objetivo deixar de identificar riscos apenas “quando solicitado” e tornar isso parte da rotina de gestão, de forma a aumentar a abrangência, a qualidade e a conexão com a realidade operacional dos setores.\n\nDeve-se atentar para: Incluir áreas meio e fim (riscos operacionais, técnicos, administrativos e estratégicos); usar fontes objetivas (dados, auditorias, monitoramento) e subjetivas (percepção dos servidores); manter o processo simples, mas documentado e comparável entre setores.\n\nEvite fazer a identificação apenas em papel, sem envolvimento real das unidades, bem como aplicar um formulário genérico e sem explicação, apenas por obrigação. Leve em consideração também os riscos já apontados por auditorias, denúncias ou relatórios de monitoramento.\n\nPara essas ações, crie um formulário-padrão de levantamento de riscos; promova oficinas práticas com as áreas (de forma simples, como reunião com script); ofereça material de apoio ou exemplos práticos aos setores; crie uma lista atualizada de riscos por área, ainda que em planilha."
+          },
+          {
+            "id": "3.2.2",
+            "descricao": "Utilizar diferentes fontes para identificar riscos",
+            "evidencias_instituicao": "ncluir fontes como relatórios de auditoria, ocorrências anteriores, reclamações, lições aprendidas, indicadores etc",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "3.2.3",
+            "descricao": "Aplicar técnicas básicas",
+            "evidencias_instituicao": "Utilizar técnicas simples e participativas na coleta de riscos (brainstorming, entrevistas etc.)",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "3.2.4",
+            "descricao": "Designar ponto focal de risco por unidade",
+            "evidencias_instituicao": "Indicar servidor de referência em cada unidade para apoiar e acompanhar o levantamento de riscos localmente",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 3.3",
+        "area": "",
+        "descricao": "Há critérios de impacto e probabilidade documentados. A avaliação de riscos segue processo definido",
+        "objetivo": "Aplicação consistente de critérios de avaliação de riscos em múltiplas áreas, com justificativas registradas e uso de ferramentas padronizadas",
+        "atividades": [
+          {
+            "id": "3.3.1",
+            "descricao": "Aplicar avaliação a múltimas áreas ou unidades a partir de critérios definidos para impacto, probabilidade e controle residual",
+            "evidencias_instituicao": "* Metodologia formal de avaliação documentada;\n* Avaliar riscos (impacto x probabilidade) em diferentes áreas da organização, com base em critérios comuns;",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "O objetivo aqui é elevar a qualidade da avaliação dos riscos, permitindo decisões mais informadas, priorização adequada e alocação coerente de recursos com base no risco. Dessa forma, é preciso buscar a aplicação sistemática de critérios objetivos, com transparência na priorização, para possibilitar a comparação dos riscos entre setores e justificar decisões com base em dados.\n\nBusque utilizar os critérios de forma coerente em todas as áreas — isso garante comparabilidade. Faça a inclusão de justificativas, para melhorar a qualidade da análise e evitar decisões superficiais. Da mesma forma, documente a matriz utilizada, que é essencial para padronização e referência futura.\n\nNão faça avaliação dos riscos de forma genérica, sem explicar o motivo da pontuação. Da mesma forma, a escala utilizada deve ser a mesma para todas as áreas, para utilização de forma coordenada. Atente-se a evitar matrizes muito sofisticadas, isso dificulta o uso por áreas técnicas.\n\nTente criar um modelo único de matriz e divulgar para todas as unidades. Promova sessões de alinhamento sobre o uso da escala e critérios. Relacione os riscos às metas estratégicas ou operacionais, mesmo que de forma inicial. Arquive as versões e mantenha um histórico da evolução da avaliação."
+          },
+          {
+            "id": "3.3.2",
+            "descricao": "Utilizar matriz de riscos padronizada institucionalmente",
+            "evidencias_instituicao": "* Adotar escala comum de níveis de impacto e probabilidade, com matriz institucional oficial aprovada;\n* Instrumentos de registro contendo todos os critérios aplicados.",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "3.3.3",
+            "descricao": "Capacitar equipes técnicas para aplicação autônoma da metodologia",
+            "evidencias_instituicao": "Realização e eventos para capacitação de equipes técnicas para aplicação da metodologia definida",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "3.3.4",
+            "descricao": "Registrar as justificativas das classificações atribuídas",
+            "evidencias_instituicao": "Apresentar as razões pelas quais cada risco recebeu sua pontuação (impacto e probabilidade)",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "3.3.5",
+            "descricao": "Relacionar os riscos às metas institucionais",
+            "evidencias_instituicao": "Indicar que riscos avaliados podem afetar direta ou indiretamente o alcance de objetivos e metas da organização",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 3.4",
+        "area": "Tratamento de Riscos",
+        "descricao": "Os riscos priorizados possuem planos de tratamento definidos, aprovados e acompanhados.",
+        "objetivo": "Formalização e monitoramento dos planos de tratamento de riscos, com ações definidas, responsáveis designados e acompanhamento sistemático",
+			"evidencias_institucionalizacao":"",
+        "atividades": [
+          {
+            "id": "3.4.1",
+            "descricao": "Criar planos formais de tratamento de riscos",
+            "evidencias_instituicao": "Elaborar planos ou registros específicos com ações para mitigação dos riscos avaliados como prioritários",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "As atividades deste KPA tem o objetivo de dar consistência e rastreabilidade ao processo de resposta aos riscos, garantindo que a mitigação seja implementada de fato, com responsabilidades claras e acompanhadas. Assim, busca-se transformar o conhecimento sobre riscos em ações concretas, evitar que os riscos permaneçam registrados, mas sem resposta prática, bem como permitir o monitoramento e a responsabilização sobre os avanços no tratamento. \n\nÉ preciso se atentar para documentar de forma simples, mas organizada: ação, responsável e prazo já são suficientes neste nível. Busque garantir que cada risco priorizado tenha uma resposta planejada e acompanhe o andamento das ações ao longo do tempo.\n\nNão faça listagem de ações genéricas (ex: “tomar providências”) sem clareza do que será feito, isso faz com que elas se torne só formais. Os planos devem ser criados em função dos riscos avaliados, por isso, não crie planos sem vínculo com os riscos avaliados ou sem indicar responsáveis. Os riscos devem ser tratados de forma específicas, evite tratar riscos de forma igual, sem priorizar os mais relevantes.\n\nBoas práticas para isso, podem ser: \n* Usar uma planilha ou formulário único para padronizar os planos de tratamento;\n* Promover reuniões de acompanhamento com os responsáveis;\n* Criar relatórios de status com semáforos (verde, amarelo, vermelho) para facilitar o controle;\n* Justificar a escolha das estratégias, mesmo que brevemente."
+          },
+          {
+            "id": "3.4.2",
+            "descricao": "Estabelecer responsáveis claros para cada ação",
+            "evidencias_instituicao": "Atribuir nominalmente (ou por função) quem será o responsável direto pela implementação de cada medida de tratamento",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "3.4.3",
+            "descricao": "Acompanhar a execução das ações",
+            "evidencias_instituicao": "Monitorar periodicamente o andamento das ações e atualizar seu status",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "3.4.4",
+            "descricao": "Relacionar ações com critérios de viabilidade ou custo-benefício",
+            "evidencias_instituicao": "Indicar o motivo da escolha da estratégia adotada, com base na análise de viabilidade, custo-benefício ou alinhamento institucional",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 3.5",
+        "area": "Monitoramento e Análise Crítica",
+        "descricao": "Indicadores de risco (KRIs) e relatórios são usados para revisar riscos periodicamente.",
+        "objetivo": "Implementação de rotinas regulares e coordenadas para monitorar os riscos e as ações de tratamento, com participação institucional e registros atualizados",
+        "atividades": [
+          {
+            "id": "3.5.1",
+            "descricao": "Estabelecer e executar um ciclo formal de revisão dos riscos",
+            "evidencias_instituicao": "Instituir periodicidade formal aprovada, com calendário definido, responsáveis nomeados e comprovação da execução dos ciclos.",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "Transformar o monitoramento de riscos em processo institucionalizado, com ciclos definidos, ações coordenadas, participação de múltiplos atores e capacidade de retroalimentar decisões estratégicas. Para isso busca-se revisar os riscos e planos de forma sistemática e monitorável/auditável, assim como engajar os responsáveis de forma planejada, com dados atualizados, garantindo que a base de informações de riscos esteja viva e útil.\n\nEvite: criar calendário, mas não executar; atualizar riscos sem critério ou sem documentar; fazer o processo restrito a uma só área ou técnico.\n\nSugere-se que: o ciclo de revisão seja incorporado ao calendário institucional; se utilize dashboards ou relatórios visuais de status; promova reuniões trimestrais de análise com setores-chave; mantenha uma trilha de monitoramento do processo (documentação completa)\n\nMudanças em relação ao Nível 2: A periodicidade aqui deve ser formalizadal, cumprida, com atas e registros, ao contrário do nível 2 onde o requisito era a definição de forma genérica da periodicidade e, ainda assim, pouco aplicada. Os responsáveis antes podiam ser implícitos ou individuais, agora é preciso que sejam noeados com as respectivas funções atribuídas. Da mesma forma, os registros documentais do nível 2 podiam ser simples e, muitas vezes, isolados, agora é preciso que a documentação seja coordenada e versionada. O mesmo ocorre com a atualização dos riscos que antes podiam ser pontuais e sem histórico, mas agora, para o cumprimento do requisito é preciso que exista controle de versão e justificativas documentadas. Por fim, a participação intersetorial era rara ou inexistente, mas agora é preciso ocorrer, de fato e existir validação conjunta."
+          },
+          {
+            "id": "3.5.2",
+            "descricao": "Monitorar e registrar a execução das ações de tratamento",
+            "evidencias_instituicao": "Verificar sistematicamente o status das ações previstas nos planos e manter registros atualizados sobre sua execução",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "3.5.3",
+            "descricao": "Atualizar formalmente os registros de riscos",
+            "evidencias_instituicao": "Registrar mudanças nas classificações, novas ocorrências, exclusões ou novos riscos, com justificativa documentada e controle de versão",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "3.5.4",
+            "descricao": "Realizar revisão coletiva com múltiplos setores",
+            "evidencias_instituicao": "Promover reuniões formais e coordenadas com representantes de diferentes áreas da organização para revisão conjunta e validação das informações de riscos",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 3.6",
+        "area": "Integração Organizacional",
+        "descricao": "A gestão de riscos é integrada aos processos operacionais e à tomada de decisão",
+        "objetivo": "Início da vinculação formal da gestão de riscos aos instrumentos de planejamento, avaliação institucional e operação de áreas-chave, de forma a garantir maior aderência e utilidade prática",
+        "atividades": [
+          {
+            "id": "3.6.1",
+            "descricao": "Vincular riscos ao planejamento estratégico ou tático",
+            "evidencias_instituicao": "Relacionar os riscos mapeados com os objetivos, metas ou indicadores previstos nos planos institucionais",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "A implementação dessas ações/atividades tem a finalidade de garantir que a gestão de riscos saia do campo técnico e passe a influenciar decisões estratégicas, orçamentárias e operacionais, promovendo integração entre planejamento, execução e controle, fazendo com que a gestão de riscos eteja presente nos documentos e decisões institucionais, para que os riscos deixem de ser apenas registros e passem a orientar ações concretas nos planos e processos.\n\nEm função disso, deve-se evitar:\n(1) apenas mencionar “risco” nos documentos sem mostrar como isso afeta decisões; (2) tratar riscos como obrigação burocrática desconectada da realidade; (3) excluir setores finalísticos das discussões de integração.\n\nPor outro lado, pode-se adotar boas práticas como:\n* (1) convidar setores para apresentar seus riscos em reuniões de planejamento; (2) criar um “anexo de riscos” nos planos de ação, com relação entre risco e resultado esperado; (3) definir uma tabela de “riscos críticos para os objetivos estratégicos”; (4) unificar a linguagem entre áreas: risco, impacto, controle, plano — todos com a mesma definição institucional.\n\nDiferenças para o Nível 2: No nível anterior existe o requisito de haver menção a riscos em documentos, mas isso poderia ser feito de forma pontual ou genérica (ex.: \"iremos considerar riscos\"), mas neste nível é preciso haver relação clara entre os riscos e metas, objetivos e ações estratégicas. Nesse mesmo sentido, a aplicação prática que antes poderia ser isolada em um ou poucos processos, agora precisa estar presente em mais áreas ou vinculada a processos institucionais críticos. No Nível 2 também a comunicação era feita de forma incial, para sensibilizar, no Nível 3 deve haver integração entre as áreas técnicas, de planejamento e de segunda linha. Por fim, a participação, que era facultativa e em poucas ações, agora precisa ser demonstrada em reuniões coordenadas de visão compartilhada e dialogada entre os setores."
+          },
+          {
+            "id": "3.6.2",
+            "descricao": "Incorporar riscos em relatórios de gestão ou resultados",
+            "evidencias_instituicao": "Incluir seções sobre riscos ou tratamento nos relatórios periódicos de desempenho da organização",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "3.6.3",
+            "descricao": "Alinhar riscos com processos operacionais de áreas-chave",
+            "evidencias_instituicao": "Garantir que os riscos estejam considerados em fluxos de trabalho e decisões relevantes de áreas meio e fim",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "3.6.4",
+            "descricao": "Promover reuniões intersetoriais sobre riscos integrados",
+            "evidencias_instituicao": "Realizar encontros envolvendo planejamento, controle interno, auditoria e áreas operacionais para analisar riscos de forma conjunta",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      }
+    ],
+    "4": [
+      {
+        "codigo": "KPA 4.1",
+        "area": "Governança de Riscos",
+        "descricao": "A governança de riscos está integrada à estrutura de governança corporativa. Há supervisão e revisão regular das práticas",
+			"evidencias_institucionalizacao":"",
+        "objetivo": "Fortalecimento da governança institucional da gestão de riscos, com instâncias de decisão operando com autonomia, alinhamento estratégico e envolvimento sistemático da liderança e das áreas-chave",
+        "atividades": [
+          {
+            "id": "4.1.1",
+            "descricao": "Operacionalizar comitê de riscos com autoridade",
+            "evidencias_instituicao": "Garantir que o comitê (ou instância equivalente) atue com autonomia decisória e influência institucional, com reuniões regulares",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "Espera-se com a implementação dessas atividades consolidar uma governança forte e ativa, que oriente a gestão institucional a partir da análise de riscos — com decisões justificadas, apoio da liderança e diálogo contínuo entre os níveis tático e estratégico. Para isso, busca-se fazer com que a gestão de riscos, de fato, influencie as decisões de alto nível, da mesma forma que espera-se que as instâncias de governaça não apenas existam, mas deliberem e sejam respeitadas. Além disso, é preciso que exista  monitoramento estratégico dos riscos prioritários, não apenas monitoramento técnico, uma vez que os riscos impactam o alcance dos objetivos organizacionais.\n\nEvite: (1) comitês apenas protocolares (que apenas \"carimbam\" decisões prontas); (2) participação da alta gestão apenas registrada em documentos e não de forma prática; (3) painéis de riscos que ninguém lê ou usa para decidir.\n\nPara garantir a eficácia da implementação, pode-se adotar, por exemplo: (1) definição de indicadores-chave de risco (KRIs) e apresentá-los à liderança regularmente; (2) criar canal de comunicação entre a gestão de riscos e os setores de planejamento e avaliação; (3) revisar a política com base em aprendizados dos últimos ciclos; (4) documentar como os riscos estratégicos foram considerados nas decisões (ex.: aquisições, projetos, convênios etc.).\n\nDiferenças dos requisitos do Nível 3 para os do Nível 4: No nível anterior a instância de governança (comitê) foi criado e entrou em funcionamento, agora o comitê deve possuir autoridade real, atuar em pautas relevantes e ter as suas decisões executadas. A participação da liderança, que antes, apesar de engajada, era pontual, agora deve ser estratégica, contínua e vinculada a decisões formais. No Nível 3, os riscos estratégicos foram alinhados aos planos, o próximo passo agora é monitorá-los ativamente, como insumo para a gestão institucional. No nível anterior não havia sistematização do aprendizado institucional, a partir de agora inicia-se a revisão e adaptação estruturada da política e estrutura de gestão de riscos."
+          },
+          {
+            "id": "4.1.2",
+            "descricao": "Integrar a liderança às decisões com base em riscos",
+            "evidencias_instituicao": "Demonstrar que a alta direção participa ativamente das decisões estratégicas com base em informações de riscos",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "4.1.3",
+            "descricao": "Vincular riscos à governança estratégica",
+            "evidencias_instituicao": "Garantir que os principais riscos estejam monitorados em painéis estratégicos ou utilizados como insumo de acompanhamento da gestão",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "4.1.4",
+            "descricao": "Instituir instância de revisão estratégica de riscos",
+            "evidencias_instituicao": "Criar fórum (comitê ou grupo gestor) que revise periodicamente os riscos estratégicos e proponha ajustes à política ou estrutura",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 4.2",
+        "area": "Identificação de Riscos",
+        "descricao": "A identificação de riscos é integrada a todos os processos organizacionais e atualizada regularmente com base em mudanças no ambiente",
+        "objetivo": "Aplicação contínua e integrada do processo de identificação de riscos em diversas áreas da organização, com uso de múltiplas fontes, técnicas especializadas e capacidade de antecipação de riscos emergentes",
+        "atividades": [
+          {
+            "id": "4.2.1",
+            "descricao": "Ampliar a identificação para toda a organização",
+            "evidencias_instituicao": "Assegurar que todas as unidades e áreas estratégicas apliquem sistematicamente o processo de identificação de riscos",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "A finalidade das atividades deste KPA é garantir que a identificação de riscos se torne um processo abrangente, proativo e conectado à realidade externa, antecipando ameaças antes que se concretizem, buscando cobrir todas as áreas da organização, através da diversificação de fontes e métodos, para maior profundidade e precisão, institucionalizando a vigilância ativa sobre os riscos emergentes.\n\nPor esses motivos, deve-se evitar: (1) focar só em riscos internos e ignorar fatores externos; (2) usar sempre o mesmo formulário sem considerar a técnica mais adequada; (3) identificar riscos apenas por conformidade, sem analisar relevância.\n\nPara isso, busque: (1) criar uma matriz de riscos emergentes e revisar semestralmente; (2) integrar a área de riscos com planejamento estratégico e jurídico para detectar mudanças regulatórias; (3) incluir critérios de risco em agendas institucionais (eventos, planejamento, relatórios); (4) desenvolver cultura em que todos os servidores possam relatar riscos percebidos.\n\nEm comparação com o Nível 3, onde a havia a abrangência de várias áreas, de forma estruturada, aqui se pretende alcançar toda a organização, com planejamento sistemático de cobertura. É nesse sentido que as técnicas aqui devem sair de básicas e participativas para a adoção de técnicas complementares, cruzadas e especializadas. No nível anterior, não havia necessidade de se considerar os riscos emergentes, mas agora já deve haver o monitoramento ativo de ameaças externas e das tendências. Por último, deve haver agora estímulo à comunicação espontânea de riscos por parte dos colaboradores, elevando a abertura institucional que antes era necessário apenas ser pontual e por demanda."
+          },
+          {
+            "id": "4.2.2",
+            "descricao": "Utilizar múltiplas técnicas e fontes complementares",
+            "evidencias_instituicao": "Aplicar diferentes técnicas (brainstorming, entrevistas, análise documental, auditorias, ocorrências etc.) de forma planejada",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "4.2.3",
+            "descricao": "Antecipar riscos emergentes e externos",
+            "evidencias_instituicao": "Monitorar tendências, legislações, notícias ou fatores externos que possam gerar novos riscos à organização",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "4.2.4",
+            "descricao": "Criar canal de comunicação para relato de riscos",
+            "evidencias_instituicao": "Instituir ferramenta para que servidores ou áreas comuniquem voluntariamente riscos percebidos",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 4.3",
+        "area": "Análise e Avaliação de Riscos",
+        "descricao": "A avaliação de riscos inclui análise de causa-raiz, interdependência entre riscos e uso de simulações ou dados históricos",
+			"evidencias_institucionalizacao":"",
+        "objetivo": "Aprofundamento da análise e avaliação de riscos com uso de critérios qualificados, técnicas complementares da ISO 31010, e vinculação dos resultados à tomada de decisão e à priorização institucional",
+        "atividades": [
+          {
+            "id": "4.3.1",
+            "descricao": "Refinar os critérios de avaliação",
+            "evidencias_instituicao": "Ampliar os critérios de impacto e probabilidade para incluir aspectos como reputação, legalidade, qualidade do serviço, imagem pública",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "Com a implementação dessas ações/atividades pretende-se aprofundar o processo de avaliação para torná-lo mais técnico, comparável, dinâmico e útil à tomada de decisões institucionais, priorizando os riscos com maior impacto sistêmico. Para isso, busca-se a ampliação e sofisticação dos critérios utilizados, considerando a realidade estratégica e operacional da organização. Além disso, fomenta-se a utilização de técnicas complementares, em especial aquelas da ISO 31010, adaptadas à capacidade organizacional. Também é objetivo fazer com que exista relação direta entre a avaliação e a definização das prioridades da organização.\n\nContudo, deve-se evitar: (1) usar apenas os mesmos critérios básicos para todos os riscos; (2) aplicar ferramentas da ISO 31010 sem entendimento técnico; (3) avaliar risco sem usar o resultado para influenciar decisões reais.\n\nNa mesma medida, recomenda-se: (1) treinar os servidores em outras técnicas descritas na ISO 31010; (2) relacionar os riscos a decisões orçamentárias e estratégicas; (3) criar uma tabela de priorização com base nos riscos mais relevantes por tema; (4) reavaliar os riscos após eventos significativos ou em função dos resultados de monitoramento/avaliações.\n\nDiferenças entre o Nível 3 e o Nível 4: Com relação aos critérios, no Nível 3 havia menção clara a serem impacto e probabilidade, de forma genérica, a intenção agora é ampliar os critérios e qualificá-los (ex.: impacto reputacional, regulatório, social). O mesmo ocorre em relação às técnicas utilizadas, que no nível anterior eram simples (brainstorming, planilhas, julgamento), que passam a demandar a aplicação de ferramentas específicas da ISO 31010, com justificativas documentadas. Outra mudança é verificada em relação ao nível de influência que a avaliação de riscos deveria ter sobre as decisões. No Nível 3 essa avaliação deveria dar suporte básico para a classificação das decisões, mas agora ela deve ser uma base estruturada para priorização e tomada de decisões institucionais. Além disso, avança-se agora para tornar a avaliação mais dinâmica, na medida em que a avaliação que antes poontual ou anual, agora deve ser feita também com base em idicadores ou mudanças contextuais."
+          },
+          {
+            "id": "4.3.2",
+            "descricao": "Utilizar técnicas da ISO 31010",
+            "evidencias_instituicao": "Aplicar técnicas específicas como análise de causa-raiz, matriz de consequências, análise de cenários, árvore de decisão etc",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "4.3.3",
+            "descricao": "Relacionar riscos com priorização institucional",
+            "evidencias_instituicao": "Integrar os resultados da avaliação de riscos com a definição de prioridades institucionais (ações, recursos, projetos)",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "4.3.4",
+            "descricao": "Reavaliar riscos com base em indicadores ou mudanças contextuais",
+            "evidencias_instituicao": "Atualizar periodicamente a avaliação com base em indicadores (KRIs) ou mudanças no ambiente interno/externo",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 4.4",
+        "area": "Tratamento de Riscos",
+        "descricao": "As estratégias de tratamento de riscos são escolhidas com base em custo-benefício e alinhamento estratégico",
+        "objetivo": "Implementação de estratégias de tratamento fundamentadas, com análise técnica, priorização de recursos e alinhamento às metas institucionais, acompanhadas de indicadores de execução e efetividade",
+        "atividades": [
+          {
+            "id": "4.4.1",
+            "descricao": "Analisar criticamente as estratégias de tratamento",
+            "evidencias_instituicao": "Avaliar opções possíveis para cada risco e justificar a escolha da estratégia adotada (mitigar, transferir, aceitar, evitar etc.)",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "As atividades deste KPA tem por finalidade tornar o tratamento de riscos mais técnico, integrado, rastreável e alinhado à capacidade institucional, priorizando os riscos mais relevantes e ajustando estratégias conforme resultados e contexto. Para isso, é preciso que o tratamento seja feito com base em análise e não só em intuição ou checklists, da mesma forma que precisa haver planejamento de ações que recebam orçamento e apoio da gestão, assim como o monitoramento ser feito por meio de indicadores claros de avanço e impacto.\n\nPor isso, deve-se evitar: (1) criar planos de tratamento genéricos sem estudo técnico; (2) propor ações que não têm recursos nem viabilidade; (3) acompanhar apenas “se foi feito”, sem avaliar o efeito da ação sobre o risco.\n\nSão exemplos de boa práticas aplicáveis: (1) estabelecer critérios de priorização para alocar orçamento em riscos críticos; (2) utilizar indicadores de sucesso vinculados à redução do risco e não só ao cumprimento da ação; (3) fazer revisões periódicas nos planos com participação das áreas responsáveis; (4) documentar alternativas descartadas (e por quê), como evidência da racionalidade da decisão.\n\nAqui as ações escolhidas devem ser baseadas em critérios técnicos e alternativas analisadas, enquanto no Nível 3 precisava-se apenas descrever as ações, mas sem análise comparativa. A integração institucional no nível anterior deveria ocorrer por meio do plano, que deveria se alinhar ao setor ou unidade. Agora o precisa haver alinhamento com o orçamento, meta e planejamento institucional. O acompanhamento, que no Nível 3 requeria apenas status simples (feitos ou não feitos), agora precisa incluir indicadores de execução e efetividade das ações de resposta. Caso fosse necessário ajustar a rota, no Nível 3 isso era feito de forma eventual e implícita, agora demanda-se revisão periódica, com base nos aprendizados, indicadores ou eventos novos."
+          },
+          {
+            "id": "4.4.2",
+            "descricao": "Integrar planos de tratamento com orçamento e metas",
+            "evidencias_instituicao": "Relacionar os planos de tratamento com a alocação de recursos e o planejamento institucional",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "4.4.3",
+            "descricao": "Monitorar a execução com indicadores específicos",
+            "evidencias_instituicao": "Acompanhar os planos com uso de indicadores quantitativos e qualitativos de progresso e efetividade",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "4.4.4",
+            "descricao": "Reavaliar a estratégia de tratamento periodicamente",
+            "evidencias_instituicao": "Rever as estratégias de resposta aos riscos com base em resultados parciais, eventos novos ou lições aprendidas",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 4.5",
+        "area": "Monitoramento e Análise Crítica",
+        "descricao": "Monitoramento é feito por sistema estruturado com alertas e integração entre áreas. A revisão considera aprendizados e tendências",
+        "objetivo": "Consolidação de um processo contínuo de monitoramento e aprendizado institucional, com indicadores-chave, relatórios analíticos, avaliação de efetividade e uso de lições aprendidas para melhoria do sistema de gestão de riscos",
+        "atividades": [
+          {
+            "id": "4.5.1",
+            "descricao": "Acompanhar riscos com indicadores-chave (KRIs)",
+            "evidencias_instituicao": "Monitorar os principais riscos com indicadores específicos e mensuráveis, que sinalizem tendências e mudanças no perfil de risco",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "As atividades deste KPA têm por finalidade aprimorar a gestão de riscos por meio de monitoramento com indicadores, avaliação de impacto real das ações e aprendizado institucional, alimentando um ciclo contínuo de melhoria. Busca-se, para isso, que o acompanhamento seja mais do que um checklist de execução - que envolva análise crítica e preventiva e que a organização aprenda com seus erros, acertos e contexto, aperfeiçoando o sistema de forma contínua.\n\nPara isso, devem ser evitados erros como: (1) monitorar apenas por obrigação, sem análise crítica; (2) considerar a ação concluída sem avaliar seu impacto no risco; (3) registrar lições aprendidas e não aplicá-las na prática.\n\nExemplos de boas práticas que podem ser aplicadas são: (1) definir KRIs com faixas de alerta e tolerância; (2) realizar reuniões semestrais para avaliação de efetividade; (3) criar uma base de dados de lições aprendidas acessível internamente; (4) reunir equipe multidisciplinar para propor ajustes no sistema com base em falhas e sucessos documentados.\n\nO que diferencia este KPA do nível anterior é: (1) o tipo de monitoremento, que antes era feito por meio de revisão de registros e status e agora deve ser feito por meio de indicadores (KRIs) e sinais de alerta; (2) forma de avaliação das ações, que antes era feita por meio de verificação da execução das ações e que agora deve ser avaliado se as ações foram efetivas na redução do risco; (3) utilização do aprendizado institucional, que antes não tinha sistematização, agora deve ser feito por meio do registro das lições aprendidas e serem compartilhadas e utilizadas; (4) forma de aperfeiçoamento do sistema, o que não era contemplado no nível anterior, aqui precisa ser feito por meio da utilização dos resultados do monitoramento para melhorar processos e políticas."
+          },
+          {
+            "id": "4.5.2",
+            "descricao": "Avaliar a efetividade das ações de tratamento",
+            "evidencias_instituicao": "Analisar se as ações adotadas estão de fato reduzindo o risco ou controlando seus efeitos, com base em evidências",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "4.5.3",
+            "descricao": "Sistematizar lições aprendidas",
+            "evidencias_instituicao": "Registrar e compartilhar aprendizados obtidos durante o processo de gestão de riscos, inclusive falhas, boas práticas e melhorias.",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "4.5.4",
+            "descricao": "Utilizar resultados do monitoramento para revisar o sistema",
+            "evidencias_instituicao": "Utilizar as análises do ciclo de riscos para propor melhorias nos processos, políticas ou estruturas da organização",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 4.6",
+        "area": "Integração Organizacional",
+        "descricao": "A gestão de riscos é considerada no ciclo de planejamento, orçamento, execução e avaliação institucional.",
+        "objetivo": "Integração efetiva da gestão de riscos aos processos institucionais relevantes, como planejamento, orçamento, projetos, tomada de decisão, e avaliação de desempenho, com mecanismos claros e rastreáveis",
+        "atividades": [
+          {
+            "id": "4.6.1",
+            "descricao": "Integrar riscos ao planejamento estratégico e orçamentário",
+            "evidencias_instituicao": "Incluir riscos como insumo para decisões de alocação de recursos, formulação de metas e priorização de iniciativas",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "Objetiva-se aqui consolidar a gestão de riscos como elemento estratégico transversal, presente nas principais funções organizacionais e capaz de influenciar diretamente resultados e decisões. Busca-se, para isso, que  a gestão de riscos esteja presente onde as decisões realmente ocorrem (no planejamento, nos contratos, nos projetos e nas avaliações), além de ter integração sistêmica, técnica e institucional da gestão de riscos.\n\nEvite, para isso: (1) mencionar riscos nos planos apenas por formalidade; (2) deixar a gestão de riscos “em um silo”, sem participação nos processos relevantes; (3) ignorar riscos em projetos e contratos com grande impacto potencial.\n\nSugere-se a adoção de práticas como: (1) criar uma tabela de riscos estratégicos vinculados a cada programa da organização; (2) exigir análise de risco em toda contratação de grande porte; (3) treinar gestores de projeto e planejamento para leitura e uso da matriz de riscos; (4) incorporar critérios de risco no sistema de indicadores estratégicos.\n\nNeste nível, os riscos devem ser considerados como critérios para as metas e alocação de recursos, ao passo que no nível anterior bastava-se que os riscos fossem citados ou relacionados pontualmente no planejamento. Da mesma forma, em projetos e contratos, antes era necessário apenas ter uma presença pontual da análise de riscos, agora é preciso haver gestão de riscos sistemática em iniciativas estratégicas. A tomada de decisões, por sua vez, que antes eram influenciadas apenas eventualmente, agora devem ser documentadas com base em avaliação de riscos. Fator não considerado no nível anterior, a avaliação de desempenho neste nível deve ser feita por meio de indicadores e painéis estratégicos integrando riscos às metas institucionais."
+          },
+          {
+            "id": "4.6.2",
+            "descricao": "Associar gestão de riscos a projetos e contratos",
+            "evidencias_instituicao": "Aplicar o processo de gestão de riscos em iniciativas institucionais relevantes, como projetos estruturantes, convênios e aquisições",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "4.6.3",
+            "descricao": "Vincular a gestão de riscos a processos decisórios",
+            "evidencias_instituicao": "Utilizar os resultados do processo de gestão de riscos como subsídio para decisões administrativas, técnicas e estratégicas",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "4.6.4",
+            "descricao": "Incluir riscos em mecanismos de avaliação institucional",
+            "evidencias_instituicao": "Associar os riscos a indicadores de desempenho e ferramentas de avaliação institucional, garantindo o acompanhamento de impactos",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      }
+    ],
+    "5": [
+      {
+        "codigo": "KPA 5.1",
+        "area": "Governança de Riscos",
+        "descricao": "A governança de riscos está consolidada como parte integrante da cultura organizacional. A alta direção lidera e incentiva o pensamento baseado em riscos em toda a instituição",
+        "objetivo": "A governança de riscos é uma função institucional consolidada, presente na cultura organizacional, com liderança proativa, aprendizagem contínua e visão estratégica voltada à criação de valor",
+        "atividades": [
+          {
+            "id": "5.1.1",
+            "descricao": "Promover liderança estratégica baseada em riscos",
+            "evidencias_instituicao": "A liderança institucional utiliza consistentemente riscos para orientar decisões e fomentar uma cultura organizacional consciente",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "O intuito aqui é consolidar a gestão de riscos como função institucional estratégica e cultural, gerando valor público, inovação e decisões sustentáveis com base em risco, promovidas diretamente pela liderança. Para isso busca-se uma liderança ativa e promotora da gestão de riscos; que se tenha uma cultura organizacional que valoriza, compreende e aplica o conceito de risco em todos os níveis; que exista um ciclo permanente de melhoria baseado em aprendizagem e evidências.\n\nNesse sentido, evite: (1) assumir que a cultura foi “implantada” apenas com campanhas; (2) medir a maturidade apenas com indicadores de execução; (3) deixar a liderança afastada das decisões técnicas e operacionais de risco.\n\nNesse processo, procure adotar práticas como: (1) incorporar a gestão de riscos ao discurso e prática diária da liderança; (2) criar espaços de escuta ativa sobre riscos e sugestões de melhoria; (3) estabelecer metas de maturidade em riscos com revisão periódica; (4) vincular cultura de riscos a processos de reconhecimento, inovação e transparência.\n\nNo Nível 5, a atuação da liderança, que no nível anterior poderia ser participativa e deliberativa, aqui tem que ser proativa, modeladora de cultura, formadora de visão estratégica com base em riscos. No mesmo sentido, a cultura organizacional que era parcialmente engajada, agora precisa ser integrada a gestão de riscos e identidade organizacional. Da mesma forma, o aprendizado deve ser contínuo com base em experiências e dados de riscos, ao contrário do que era requerido anteriormente, onde o aprendizado institucional podia ser pontual, voltado à política e processos. Por fim, a própria organização deve fazer a sua avaliação de maturidade, por meio de ferramenta sistemática de evolução e autoaperfeiçoamento da governança de riscos, o que era feito, no nível anterior, somente de forma eventual ou através de avaliações externas à organização."
+          },
+          {
+            "id": "5.1.2",
+            "descricao": "Incorporar riscos à cultura institucional",
+            "evidencias_instituicao": "A gestão de riscos está internalizada na rotina e valores da organização, disseminada entre servidores, processos e comunicação interna",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "5.1.3",
+            "descricao": "Fomentar aprendizagem institucional com base em riscos",
+            "evidencias_instituicao": "O processo de gestão de riscos é usado como ferramenta de aprendizagem, inovação e aprimoramento contínuo da organização",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "5.1.4",
+            "descricao": "Utilizar indicadores estratégicos de maturidade em riscos",
+            "evidencias_instituicao": "Aplicar ferramentas de avaliação contínua da maturidade em gestão de riscos e usá-las para ajustar a governança",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 5.2",
+        "area": "Identificação de Riscos",
+        "descricao": "A organização antecipa riscos emergentes e oportunidades com base em inteligência organizacional e participação de partes interessadas",
+        "objetivo": "A organização desenvolve mecanismos inteligentes, preditivos e colaborativos para identificar riscos novos, emergentes e interdependentes, com apoio em dados, tecnologia e participação ampliada",
+        "atividades": [
+          {
+            "id": "5.2.1",
+            "descricao": "Utilizar dados e tecnologia para antecipar riscos",
+            "evidencias_instituicao": "Integrar sistemas de informação, dados internos e fontes externas para monitoramento contínuo e detecção preditiva de riscos",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "Ao implementar as ações/atividades deste KPA, pretende-se transformar a identificação de riscos em um processo inteligente, interativo, automatizado e aberto, capaz de antecipar ameaças, envolver diversos atores e gerar inteligência institucional. A intenção é tornar a identificação de riscos uma atividade contínua, dinâmica e baseada em evidências, saindo da abordagem reativa e periódica, buscando o engajamento amplo de diferentes atores e a utilização de tecnologia e análise de dados.\n\nDeve-se evitar: (1) coletar dados e não analisar; (2) criar ferramentas tecnológicas que não são usadas; (3) ignorar riscos reputacionais, sociais e ambientais em contextos complexos.\n\nSão boas práticas recomendadas: (1) a integração de painéis de desempenho e risco em um único sistema; (2) a criação de dashboard com alertas automáticos de riscos críticos; (3) o estabelecimento de programa de escuta ativa com áreas e público externo; (4) a realização de workshops periódicos sobre riscos emergentes e mudanças no ambiente externo.\n\nDiferenças entre o Nível 4 e o Nível 5: Apesar de o nível anterior já trazer a previsão de se utilizar fontes de dados múltiplas, aqui pretende-se que os fluxos de dados sejam permanentes, além de levar em consideração dados internos e externos, que devem ser tratados por meio de sistemas. Aqui também há a necessidade de se ampliar a participação, de forma colaborativa, inclusive externa, o que no nível anterior pedia-se somente participação interna, com foco em setores técnicos. Outra mudança é em relação ao tipo de risco identificado, que no nível anterior eram riscos operacionais e os principais riscos estratégicos, agora deve-se focar em riscos emergentes, interdependentes, de contexto e de reputação. O mesmo acontece com a velocidade da reação à mudança que antes podia ser só periódica e estruturada e agora precisa ser contínua e em tempo real, baseada em sinais de alerta e lições aprendidas."
+          },
+          {
+            "id": "5.2.2",
+            "descricao": "Criar mecanismos participativos de captação de riscos",
+            "evidencias_instituicao": "Envolver partes interessadas, servidores e público externo na identificação colaborativa de riscos",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "5.2.3",
+            "descricao": "Monitorar riscos interdependentes e sistêmicos",
+            "evidencias_instituicao": "Mapear e tratar riscos que afetam múltiplas unidades, áreas ou funções, considerando interações e efeitos em cadeia",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "5.2.4",
+            "descricao": "Atualizar continuamente a base de riscos",
+            "evidencias_instituicao": "Revisar a matriz de riscos de forma dinâmica, sempre que surgirem novas informações, aprendizados ou mudanças externas significativas",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 5.3",
+        "area": "Análise e Avaliação de Riscos",
+        "descricao": "As análises de riscos consideram múltiplos cenários, interdependências complexas e avaliação de impactos sociais e institucionais",
+        "objetivo": "A avaliação de riscos é realizada com métodos quantitativos ou preditivos, voltada à antecipação de impactos estratégicos e tomada de decisões em cenários complexos, com simulações, comparações e análise de riscos interdependentes",
+        "atividades": [
+          {
+            "id": "5.3.1",
+            "descricao": "Aplicar métodos avançados de avaliação",
+            "evidencias_instituicao": "Utilizar técnicas quantitativas, modelagem de cenários, simulações, análise multicritério ou árvore de decisão com base em dados reais",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "As atividades deste KPA tem por fim fazer com que a avaliação de riscos oriente decisões estratégicas de forma antecipada, comparável, técnica e embasada, considerando diferentes cenários e o impacto real nos objetivos da organização. Para isso é peciso passar de uma análise descritiva para uma análise preditiva e estratégica, adotar práticas que permitam a comparação entre riscos, cenários e decisões possíveis, com base em envidências, além de tornar a avaliação de riscos um instrumento de gestão pública com foo em valor e sustentabilidade.\n\nDeve-se evitar: (1) usar ferramentas complexas sem capacitação adequada; (2) ignorar riscos de baixa probabilidade, mas alto impacto; (3) fazer simulações sem conexão com decisões reais.\n\nSão exemplos de boas práticas: (1) a utilização de ferramentas como Monte Carlo, análise de cenários, ponderação de critérios com pesos; (2) relacionar riscos a decisões complexas: orçamento, contratos, projetos estruturantes; (3) criar uma matriz de priorização com impacto x valor público x custo de mitigação; (4) publicar relatórios de risco com linguagem acessível para a alta gestão.\n\nNo Nível 4, o aperfeiçoamento requirido era a utilização de instrumentos previstos na ISO 31010 com escopo ampliado, aqui pretende-se que a organização utilize modelos quantitativos, preditivos ou multicritérios, com apoio tecnológico. O impacto a ser considerado, que antes era operacional, legal e estratégico, é agora voltado ao institucional, sistêico, reputacional, ambiental, social e econômico. Por sua vez, a tomada de decisões, neste nível, precisa ser guiada por simulações, comparações e ferramentas de apoio à decisão, enquanto no nível anterior podia ser somete baseada em classificação e prioridade. No Nìvel 5 também é proposto o aumento da capacidade de antecipação, por meio da projeção de cenários e previsão dos efeitos com base em dados e variáveis, enquanto no Nível 4 requeria-se somente a avaliação periódica."
+          },
+          {
+            "id": "5.3.2",
+            "descricao": "Relacionar riscos aos impactos institucionais",
+            "evidencias_instituicao": "Avaliar os riscos considerando impactos sistêmicos, reputacionais, sociais e institucionais, e não apenas operacionais",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "5.3.3",
+            "descricao": "Simular cenários de risco e impacto",
+            "evidencias_instituicao": "Realizar exercícios de simulação, projeção ou análise de sensibilidade, considerando diferentes possibilidades de ocorrência",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "5.3.4",
+            "descricao": "Integrar avaliação de riscos com matriz de decisão estratégica",
+            "evidencias_instituicao": "Relacionar o resultado da avaliação com uma ferramenta decisória para priorizar ações, recursos e intervenções",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 5.4",
+        "area": "Tratamento de Riscos",
+        "descricao": "O tratamento de riscos inclui inovação, parcerias, compartilhamento de riscos e análise contínua de efetividade",
+        "objetivo": "Adoção de estratégias de tratamento inovadoras, adaptáveis, com base em análises de viabilidade, custo-benefício e impacto, ajustadas continuamente por feedback, indicadores e mudanças de contexto",
+        "atividades": [
+          {
+            "id": "5.4.1",
+            "descricao": "Aplicar análise de custo-benefício e viabilidade",
+            "evidencias_instituicao": "Comparar alternativas de tratamento com base em custos, tempo, impacto e alinhamento estratégico antes de tomar decisão",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "Com a implementação das ações/atividades deste KPA pretende-se tornar o tratamento de riscos estratégico, adaptável e inovador, de forma que as ações escolhidas sejam viáveis, eficazes e ajustadas com base em resultados e mudanças no ambiente institucional. Para isso, busca-se fazer com que a resposta aos riscos seja racional, justificada e flexível, requerendo também que o tratamento esteja em constante evolução, com base em feedback, inovação e aprendizagem institucional, além de ser necessário que a organização saiba até onde pode aceitar o risco e tome decisões conscientes sobre isso.\n\nDeve-se evitar: (1) criar ações que são caras demais e pouco eficazes; (2) não revisar o plano após evidências de falha; (3) implementar soluções inovadoras sem análise de impacto.\n\nSão exemplos de boas práticas: (1) criar um banco de soluções inovadoras para riscos recorrentes; (2) monitorar custo da mitigação x impacto estimado do risco; (3) manter trilha de ajustes feitos com base em aprendizados; (4) discutir periodicamente o apetite institucional a riscos em fóruns estratégicos.\n\nAntes o planejamento do tratamento deveria ser baseao em análise técnica, agora, no nível 5, é preciso ser baseado em viabilidade, impacto e custo-benefício com ferramentas comparativas. Por sua vez, a revisão das ações que antes era eventual e corretiva, agora passa a ser contínua e adaptativa, orientada por feedback e resultados. No mesmo sentido, as estratégias utilizadas que antes eram migitação tradicional, agora requerem tratamento com inovação, criatividade, parcerias e transformação digital. Além disso, no Nível 4, o risco residual e o apetite eram avaliados apenas pontualmente, mas agora devem ser avaliados sistematicamente, com base em liites estratégicos definidos institucionalmente."
+          },
+          {
+            "id": "5.4.1",
+            "descricao": "Ajustar estratégias com base em feedback e monitoramento",
+            "evidencias_instituicao": "Rever e modificar ações de tratamento com base em aprendizados, indicadores e avaliação de efetividade, de forma adaptativa",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "5.4.3",
+            "descricao": "Incorporar inovação nas respostas a riscos",
+            "evidencias_instituicao": "Adotar soluções criativas ou tecnológicas para mitigação ou controle dos riscos",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "5.4.4",
+            "descricao": "Analisar riscos residuais e apetite a riscos",
+            "evidencias_instituicao": "Avaliar os riscos que permanecem após tratamento e comparar com os limites aceitáveis definidos pela organização",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 5.5",
+        "area": "Monitoramento e Análise Crítica",
+        "descricao": "A organização utiliza monitoramento inteligente com feedback em tempo real e aprendizado organizacional sistemático",
+        "objetivo": "Estabelecimento de mecanismos inteligentes de monitoramento contínuo e retroalimentação em tempo real, com uso de indicadores avançados, dashboards dinâmicos, revisão adaptativa e cultura institucional de aprendizado baseada em riscos",
+        "atividades": [
+          {
+            "id": "5.4.1",
+            "descricao": "Monitorar riscos em tempo real com painéis interativos",
+            "evidencias_instituicao": "Desenvolver e manter dashboards com dados atualizados automaticamente, integrando riscos, planos de ação e indicadores de desempenho",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "Com o intuito de consolidar o monitoramento de riscos como processo contínuo, responsivo e inteligente, orientado por dados em tempo real e conectado à aprendizagem institucional e melhoria estratégica, o KPA 5.5 busca tornar as informações risco acessíveis, atualizadas e úteis à tomada de decisão rápida, bem como tornar o aprendizado institucional integrado e baseado em evidência, além de promover o acompanhamento constante e evolução progressiva da maturidade em riscos. \n\nDeve-se evitar: (1) criar dashboards sem curadoria ou uso efetivo; (2) tratar aprendizado como simples formalidade; (3) deixar indicadores de risco isolados dos indicadores de desempenho.\n\nSugere-se a adotação de boas práticas como: (1) criar painel integrado com metas, planos e riscos principais; (2) estabelecer alertas automáticos para alterações em riscos críticos; (3) manter um histórico claro das melhorias implantadas com base em aprendizados; (4) usar avaliação de maturidade para planejar ações de capacitação, revisão de políticas ou reorganização institucional.\n\nDiferenças para o nível anterior: a periodicidade do monitoramento, que antes tinha que ser semestral ou anual, agora precisa ser contínua, com painéis atualizados em tempo real. Os indicadores, estabelecidos no nível 4, agora precisam ser dinâmicos e integrados a dashboards e dados institucionais. No nível 4, registravam-se as lições aprendidas, agora o aprendizado deve ser sistematizado e aplicados a melhorias institucionais em tempo real. Por fim, avaliação da maturidade da gestão de riscos era aplicada separadamente e agora deve estar vinculada a dados de desempenho, com análise cruzaa e uso estratégico."
+          },
+          {
+            "id": "5.4.1",
+            "descricao": "Estabelecer ciclos curtos de revisão e ajuste",
+            "evidencias_instituicao": "Implementar revisão contínua dos riscos e planos, com base em ciclos mensais ou trimestrais, incluindo análises de impacto de eventos",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "5.4.3",
+            "descricao": "Sistematizar aprendizado organizacional com base em dados",
+            "evidencias_instituicao": "Transformar dados e lições aprendidas em recomendações acionáveis, compartilhadas entre as áreas e aplicadas para melhoria contínua",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "5.4.4",
+            "descricao": "Avaliar maturidade com base em dados de desempenho e risco",
+            "evidencias_instituicao": "Relacionar os dados de risco aos dados de desempenho institucional, avaliando a evolução da maturidade de forma sistêmica",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      },
+      {
+        "codigo": "KPA 5.6",
+        "area": "Integração Organizacional",
+        "descricao": "A gestão de riscos é incorporada de forma transversal à cultura, aos processos, aos sistemas e à estratégia da organização",
+        "objetivo": "A gestão de riscos é plenamente integrada aos sistemas institucionais e à criação de valor público, sendo utilizada para garantir sustentabilidade, inovação, transparência, impacto social e alinhamento com os objetivos estratégicos de longo prazo",
+        "atividades": [
+          {
+            "id": "5.4.1",
+            "descricao": "Vincular riscos a impactos sociais e valor público",
+            "evidencias_instituicao": "Considerar, nos processos de decisão e priorização, os riscos associados à geração de valor, equidade, sustentabilidade e confiança social",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": "A finalidade é alinhar a gestão de riscos ao propósito institucional de gerar valor público, com decisões sustentáveis, integradas, inovadoras e transparentes — que fortaleçam a legitimidade, a efetividade e o impacto das ações da organização. Para isso, requer-se que a gestão de riscos oriente não apenas o desempenho, mas a sustentabilidade e o propósito institucional, focando em uma visão de longo prazo, na qual os riscos são  acompanhados por seu impacto social e sua relevância pública e a gestão de riscos se torne uma ferramenta de confiança institucional e transparência. \n\nDeve-se evitar: (1) reduzir riscos à técnica, sem conexão com os efeitos para a sociedade; (2) tratar riscos institucionais e sociais de forma separada; (3) considerar transparência como “exposição de fragilidades” em vez de confiança.\n\nSão boas práticas sugeridas: (1) criar matriz de riscos com foco em valor público e impacto social; (2) publicar relatórios anuais com linguagem acessível sobre os principais riscos da organização; (3) integrar riscos de sustentabilidade, integridade, inovação e imagem institucional; (4) planejar decisões estratégicas com base em risco residual e cenários futuros.\n\nDiferenças para o nível anterior: Há um avanço no requisito de integração com processos, na medida em que, no nível 4, precisava estar presente nos processos estratégicos e operacionais e agora precisa estar totalmente articulada com todos os sistemas de gestão, com visão de impacto social. A temporalidade, que antes se limitava a curtos e médios prazos, agora precisa ser para médio e longo prazo, alinhada a ODSs, planos plurianuais etc. O foco agora é no valor público, legitimidade, confiança e sustentabilidade, enquanto no nível anterior se restringia ao desempenho institucional. A comunicação e transparência, que antes era voltada ao público interno e de forma técnica, agora precisa ser externa, cidadã, acessível e conectada ao interesse público."
+          },
+          {
+            "id": "5.4.1",
+            "descricao": "Integrar riscos com outros sistemas de gestão institucional",
+            "evidencias_instituicao": "Articular a gestão de riscos com os sistemas de planejamento, orçamento, auditoria, compliance, controle interno e inovação",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "5.4.3",
+            "descricao": "Conectar riscos a resultados de longo prazo e estratégia",
+            "evidencias_instituicao": "Acompanhar os riscos com visão de médio e longo prazo, vinculando-os aos resultados esperados no plano institucional ou nos ODS",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          },
+          {
+            "id": "5.4.4",
+            "descricao": "Promover transparência e prestação de contas sobre riscos",
+            "evidencias_instituicao": "Comunicar de forma acessível e institucionalizada os principais riscos, estratégias e resultados ao público interno e externo",
+			"evidencias_institucionalizacao":"",
+            "orientacoes": ""
+          }
+        ]
+      }
+    ]
+  }
+}
