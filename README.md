@@ -215,7 +215,6 @@ Apenas exige:
 
 - ✅ **Versão 1.0** - Sistema completo funcional
 - 🔄 **Em desenvolvimento** - Melhorias contínuas
-- 📋 **Roadmap** - Veja [PLANEJAMENTO_EVOLUCAO.md](docs/PLANEJAMENTO_EVOLUCAO.md)
 
 ---
 
