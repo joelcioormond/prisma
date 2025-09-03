@@ -151,7 +151,6 @@ POSTGRES_PASSWORD=sua_senha
 
 - [Documentação Técnica](docs/DOCUMENTACAO_TECNICA.md)
 - [Guia de Contribuição](CONTRIBUTING.md)
-- [Planejamento de Evolução](docs/PLANEJAMENTO_EVOLUCAO.md)
 
 ## 🔐 Credenciais Padrão
 
