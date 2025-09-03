@@ -5,213 +5,185 @@
 
 ## 1. Introdução
 
-Este documento fornece uma visão técnica detalhada do **PRISMA - Plataforma de Riscos e Maturidade**. O objetivo é servir como um guia para desenvolvedores, mantenedores e administradores de sistema, cobrindo a arquitetura, componentes, configuração e deploy da aplicação.
+Esta documentação técnica detalha a arquitetura, organização do código, tecnologias e procedimentos para a configuração e execução da plataforma PRISMA (Plataforma de Riscos e Maturidade). O objetivo é fornecer a desenvolvedores e mantenedores as informações necessárias para compreender, manter e evoluir o sistema de forma eficiente.
 
-O sistema foi projetado para ser robusto, escalável e de fácil manutenção, utilizando tecnologias modernas e práticas de desenvolvimento consagradas.
-
-### 1.1. Visão Geral da Arquitetura
-
-A aplicação segue uma arquitetura de microsserviços desacoplada, composta por dois componentes principais:
-
-- **Backend (API RESTful):** Uma API desenvolvida em Python com o framework Flask. É responsável por toda a lógica de negócio, autenticação, acesso ao banco de dados e geração de relatórios.
-- **Frontend (Single-Page Application - SPA):** Uma aplicação rica e interativa desenvolvida em JavaScript com a biblioteca React. É responsável por toda a interface do usuário e interação com o cliente.
-
-Essa separação clara de responsabilidades (backend e frontend) permite o desenvolvimento e a implantação independentes de cada parte, facilitando a manutenção e a escalabilidade.
-
-### 1.2. Stack de Tecnologias
-
-| Camada | Tecnologia | Versão | Descrição |
-|---|---|---|---|
-| **Backend** | Python | 3.8+ | Linguagem de programação principal |
-| | Flask | 3.0.0 | Micro-framework web para a API |
-| | Gunicorn | 21.2.0 | Servidor WSGI para produção |
-| **Frontend** | JavaScript | ES6+ | Linguagem de programação principal |
-| | React | 18+ | Biblioteca para construção da interface de usuário |
-| | Bootstrap | 5+ | Framework CSS para estilização e componentes |
-| **Banco de Dados** | PostgreSQL | 12+ | Banco de dados relacional para produção |
-| | SQLite | 3+ | Banco de dados para desenvolvimento |
-| **Autenticação** | JWT | - | Padrão para transmissão segura de informações |
-| **Geração de PDF** | WeasyPrint | 60.0 | Engine para conversão de HTML/CSS para PDF |
-| **Ambiente** | Docker | Opcional | Containerização para deploy simplificado |
+O PRISMA é uma aplicação web full-stack projetada para permitir que organizações realizem autoavaliações de maturidade em gestão de riscos, com base na norma ISO 31000. O sistema é composto por um backend em Python (Flask) que serve uma API RESTful e um frontend em React.js que consome essa API para fornecer uma interface de usuário rica e interativa.
 
 
 
 
+## 2. Arquitetura Geral
 
-## 2. Arquitetura do Backend
+A aplicação segue uma arquitetura cliente-servidor desacoplada, onde o frontend (cliente) é totalmente independente do backend (servidor). A comunicação entre eles ocorre exclusivamente através de chamadas à API RESTful.
 
-O backend é o cérebro do sistema, construído sobre o Flask, um micro-framework Python conhecido por sua simplicidade e extensibilidade. A estrutura do projeto foi organizada para promover a modularidade e a separação de conceitos.
+- **Backend**: Uma API RESTful desenvolvida em Python com o microframework Flask. É responsável por toda a lógica de negócio, incluindo autenticação de usuários, gerenciamento de avaliações, persistência de dados e geração de relatórios.
 
-### 2.1. Estrutura de Diretórios
+- **Frontend**: Uma Single-Page Application (SPA) construída com React.js. É responsável por toda a interface do usuário, renderizando os componentes, gerenciando o estado da aplicação e realizando as chamadas para a API do backend.
+
+- **Banco de Dados**: O sistema utiliza SQLite como banco de dados padrão para simplicidade e facilidade de configuração em ambientes de desenvolvimento. O banco de dados é armazenado em um arquivo local gerenciado pelo backend.
+
+### Estrutura de Diretórios
+
+A estrutura de diretórios do projeto foi organizada para separar claramente as responsabilidades do backend e do frontend:
 
 ```
-backend/
-├── src/                      # Código fonte da aplicação
-│   ├── __init__.py           # Transforma o diretório em um pacote Python
-│   ├── main.py               # Factory da aplicação e definição das rotas
-│   ├── config.py             # Módulo de configuração (produção, dev, teste)
-│   ├── database.py           # Módulo de gerenciamento de banco de dados
-│   └── pdf_generator.py      # Lógica para geração de relatórios em PDF
-├── venv/                     # Ambiente virtual Python
-├── uploads/                  # Diretório para arquivos de evidência
-├── run.py                    # Ponto de entrada para executar o servidor
-├── requirements.txt          # Lista de dependências Python
-├── Procfile                  # Para deploy em plataformas como Heroku
-├── .env                      # Arquivo de variáveis de ambiente (não versionado)
-└── .env.example              # Exemplo de arquivo .env
+prisma/
+├── backend/                 # Código-fonte da API (Python/Flask)
+│   ├── src/
+│   │   ├── main.py         # Arquivo principal da aplicação Flask com as rotas da API
+│   │   └── pdf_generator.py # Módulo para geração de relatórios em PDF
+│   └── requirements.txt    # Dependências do ambiente Python
+├── frontend/               # Código-fonte da interface (React.js)
+│   ├── public/             # Arquivos estáticos (HTML, imagens, manifestos)
+│   ├── src/
+│   │   ├── components/     # Componentes reutilizáveis da interface
+│   │   ├── contexts/       # Contextos do React (ex: autenticação)
+│   │   ├── App.js          # Componente raiz da aplicação
+│   │   ├── index.js        # Ponto de entrada do React
+│   │   └── ...             # Outros arquivos de configuração e estilos
+│   └── package.json        # Dependências e scripts do Node.js
+├── docs/                   # Pasta para documentação adicional
+├── .gitignore              # Configuração de arquivos a serem ignorados pelo Git
+├── LICENSE                 # Licença de uso do software
+└── README.md               # Documentação principal do projeto
 ```
 
-### 2.2. Módulos Principais
+## 3. Backend (API RESTful)
 
-- **`main.py`**: Utiliza o padrão *Application Factory* (`create_app`) para inicializar a aplicação. Isso permite criar múltiplas instâncias da aplicação com diferentes configurações, o que é essencial para testes e flexibilidade no deploy. Todas as rotas da API são definidas aqui.
+O backend é construído em Python 3.8+ com Flask, um microframework leve e flexível.
 
-- **`config.py`**: Centraliza todas as configurações da aplicação. Utiliza classes para separar configurações de diferentes ambientes (Desenvolvimento, Produção, Testes). As configurações são carregadas a partir de variáveis de ambiente, seguindo as melhores práticas do [The Twelve-Factor App](https://12factor.net/config).
+### 3.1. Tecnologias Utilizadas
 
-- **`database.py`**: Abstrai a complexidade da conexão e manipulação do banco de dados. A classe `DatabaseManager` fornece uma interface unificada para interagir tanto com SQLite quanto com PostgreSQL. O uso de um *context manager* (`@contextmanager`) garante que as conexões sejam sempre fechadas corretamente, prevenindo vazamento de recursos.
+- **Flask**: Framework web para a construção da API.
+- **Flask-CORS**: Extensão para lidar com Cross-Origin Resource Sharing (CORS), permitindo que o frontend (em um domínio diferente) acesse a API.
+- **SQLite**: Banco de dados relacional embarcado, utilizado como padrão.
+- **ReportLab**: Biblioteca para a geração programática de documentos PDF, utilizada para criar os relatórios de avaliação.
+- **Werkzeug**: Biblioteca de utilitários WSGI, utilizada pelo Flask para o tratamento de senhas (hash e verificação).
 
-- **`pdf_generator.py`**: Isola a lógica de criação de relatórios em PDF. Atualmente, utiliza a biblioteca WeasyPrint, que renderiza HTML e CSS para PDF, permitindo a criação de relatórios complexos e bem estilizados a partir de templates.
+### 3.2. Arquivos Principais
 
-### 2.3. Fluxo de Requisição
+- **`backend/src/main.py`**: Este é o coração da aplicação backend. Ele é responsável por:
+  - Inicializar a aplicação Flask.
+  - Configurar o banco de dados SQLite e criar as tabelas necessárias na primeira execução.
+  - Definir todas as rotas (endpoints) da API, como `/login`, `/usuarios`, `/avaliacoes`, etc.
+  - Implementar a lógica para cada rota, incluindo a interação com o banco de dados.
 
-1. Uma requisição HTTP chega ao servidor WSGI (Gunicorn em produção).
-2. O Gunicorn repassa a requisição para a aplicação Flask (`app`).
-3. O Flask faz o roteamento da URL para a função (view) correspondente (ex: `/api/auth/login` para a função `login`).
-4. A função da view processa a requisição, interagindo com o `DatabaseManager` para operações de banco de dados.
-5. Os dados são processados e uma resposta JSON é gerada.
-6. O middleware do Flask-CORS adiciona os headers CORS necessários à resposta.
-7. A resposta é enviada de volta ao cliente.
+- **`backend/src/pdf_generator.py`**: Módulo dedicado exclusivamente à criação dos relatórios em PDF. Ele contém a lógica para:
+  - Receber os dados de uma avaliação.
+  - Estruturar o layout do relatório, incluindo cabeçalhos, parágrafos, tabelas e gráficos.
+  - Gerar o arquivo PDF e retorná-lo como uma resposta da API.
 
-### 2.4. Configuração para PostgreSQL
+- **`backend/requirements.txt`**: Lista todas as bibliotecas Python necessárias para que o backend funcione. O ambiente virtual pode ser populado com o comando `pip install -r requirements.txt`.
 
-A transição de SQLite para PostgreSQL é gerenciada inteiramente pelo `config.py` e `database.py`.
+### 3.3. Banco de Dados
 
-1. **Configuração:** No arquivo `.env`, a variável `DATABASE_TYPE` deve ser alterada para `postgresql` e as variáveis `POSTGRES_*` devem ser preenchidas com as credenciais do banco de dados.
+O banco de dados é configurado para usar SQLite por padrão. O arquivo do banco de dados, chamado `prisma.db`, é criado automaticamente na pasta raiz do backend (`backend/`) na primeira vez que a aplicação é executada. Todas as tabelas (`usuarios`, `orgaos`, `avaliacoes`, etc.) são também criadas nesse momento, caso não existam.
 
-2. **Conexão:** O `DatabaseManager` detecta o tipo de banco e utiliza a biblioteca `psycopg2-binary` para se conectar ao PostgreSQL.
+Não há necessidade de configuração manual para o banco de dados em ambiente de desenvolvimento.
 
-3. **SQL:** O `database.py` contém as instruções SQL de `CREATE TABLE` específicas para cada dialeto (SQLite e PostgreSQL), garantindo a compatibilidade dos tipos de dados (ex: `INTEGER PRIMARY KEY AUTOINCREMENT` no SQLite vs. `SERIAL PRIMARY KEY` no PostgreSQL).
+## 4. Frontend (React.js)
 
+O frontend é uma aplicação moderna construída com React.js, proporcionando uma experiência de usuário fluida e responsiva.
 
+### 4.1. Tecnologias Utilizadas
 
+- **React**: Biblioteca JavaScript para a construção de interfaces de usuário.
+- **React Router**: Para o gerenciamento de rotas no lado do cliente, permitindo a navegação entre diferentes "páginas" da SPA.
+- **Bootstrap**: Framework de CSS para a criação de um design responsivo e estilizado.
+- **Chart.js**: Biblioteca para a criação de gráficos e visualizações de dados interativas, utilizada nos dashboards e relatórios.
+- **Axios** (ou `fetch` nativo): Para realizar as requisições HTTP para a API do backend.
 
-## 3. Arquitetura do Frontend
+### 4.2. Estrutura de Arquivos
 
-O frontend é uma Single-Page Application (SPA) construída com React, projetada para oferecer uma experiência de usuário fluida e responsiva.
+- **`frontend/src/components/`**: Contém todos os componentes React reutilizáveis que formam a interface, como formulários, modais, tabelas, cabeçalhos, etc. A componentização permite um código mais limpo e de fácil manutenção.
 
-### 3.1. Estrutura de Diretórios (Recomendada)
+- **`frontend/src/contexts/`**: Armazena os contextos do React, como o `AuthContext`, que é responsável por gerenciar o estado de autenticação do usuário em toda a aplicação.
 
-```
-frontend/
-├── public/                   # Arquivos estáticos (index.html, favicon, etc.)
-│   ├── index.html
-│   └── brasao-mt.png
-|   └── modelo_completo_final2.json
-├── src/                      # Código fonte da aplicação
-│   ├── components/           # Componentes React reutilizáveis
-│   │   ├── LoginSimples.js
-│   │   ├── Dashboard.js
-│   │   ├── FormularioAvaliacao.js
-│   │   └── ...
-│   ├── contexts/             # Contextos React para gerenciamento de estado
-│   │   └── AuthContext.js
-│   ├── services/             # Lógica de comunicação com a API
-│   │   └── api.js
-│   ├── App.js                # Componente raiz e roteamento
-│   ├── index.js              # Ponto de entrada da aplicação React
-│   └── index.css             # Estilos globais
-├── package.json              # Dependências e scripts do projeto
-├── .env                      # Variáveis de ambiente do frontend
-└── .gitignore
-```
+- **`frontend/src/App.js`**: É o componente principal que organiza o layout geral e o roteamento da aplicação.
 
-### 3.2. Gerenciamento de Estado
+- **`frontend/src/index.js`**: É o ponto de entrada da aplicação React, onde o componente `App` é renderizado no DOM.
 
-O estado global da aplicação, especialmente o estado de autenticação do usuário, é gerenciado através do **React Context API**.
+- **`frontend/public/`**: Contém os arquivos estáticos que não são processados pelo Webpack, como o `index.html` (template base), `favicon.ico`, e imagens.
 
-- **`AuthContext.js`**: Este contexto provê informações sobre o usuário logado (`user`), o status de carregamento (`loading`) e as funções de `login` e `logout` para todos os componentes aninhados. O hook customizado `useAuth` simplifica o acesso a este contexto.
-
-O estado local dos componentes (como dados de formulários) é gerenciado com o hook `useState`.
-
-### 3.3. Roteamento
-
-O roteamento da aplicação é gerenciado pela biblioteca **React Router DOM**.
-
-- **`App.js`**: Define todas as rotas da aplicação, incluindo rotas públicas (como `/login`) e rotas protegidas.
-- **Rotas Protegidas**: Um componente `RotaProtegida` é utilizado para envolver as rotas que exigem autenticação. Ele verifica o estado do usuário no `AuthContext` e redireciona para a página de login caso o usuário não esteja autenticado.
-
-### 3.4. Comunicação com a API
-
-Toda a comunicação com o backend é feita através de requisições HTTP (fetch API) para a API RESTful.
-
-- **URLs Dinâmicas**: Para garantir que o frontend funcione em qualquer ambiente (desenvolvimento local ou produção), as URLs da API são construídas dinamicamente usando `window.location.hostname`.
-  ```javascript
-  const apiUrl = `http://${window.location.hostname}:5000/api/auth/login`;
-  ```
-- **Tratamento de Erros**: As requisições são envolvidas em blocos `try...catch` para lidar com erros de rede e respostas inesperadas da API, fornecendo feedback adequado ao usuário.
+- **`frontend/package.json`**: Arquivo de configuração do Node.js que lista as dependências do projeto e define scripts úteis (como `npm start`, `npm build`).
 
 
 
 
-## 4. Segurança
+## 5. Instalação e Execução
 
-A segurança foi uma preocupação central no desenvolvimento do sistema.
+Siga os passos abaixo para configurar e executar o ambiente de desenvolvimento localmente.
 
-### 4.1. Autenticação e Autorização
+### 5.1. Pré-requisitos
 
-- **Hashing de Senhas**: As senhas dos usuários nunca são armazenadas em texto plano. Elas são hasheadas no backend usando o algoritmo **SHA-256** antes de serem salvas no banco de dados.
-- **Autenticação de Rotas**: O frontend envia o email do usuário no header `X-User-Email` em requisições para rotas protegidas. O backend utiliza este header para verificar a identidade e as permissões do usuário antes de processar a requisição.
-- **Controle de Acesso Baseado em Perfil (RBAC)**: O sistema utiliza perfis (`admin`, `gestor`, `usuario`) para controlar o acesso a diferentes funcionalidades. As permissões são definidas no backend e enviadas ao frontend no momento do login.
+- **Python 3.8+**
+- **Node.js 16+**
+- **Git**
 
-### 4.2. CORS (Cross-Origin Resource Sharing)
+### 5.2. Configuração do Backend
 
-O backend utiliza a extensão **Flask-CORS** para gerenciar as políticas de CORS, permitindo que o frontend (hospedado em um domínio diferente, como `localhost:3000`) faça requisições seguras para a API (hospedada em `localhost:5000`).
+1.  **Clone o repositório:**
+    ```shell
+    git clone https://github.com/joelcioormond/prisma.git
+    cd prisma/backend
+    ```
 
-### 4.3. Variáveis de Ambiente
+2.  **Crie e ative um ambiente virtual:**
+    ```shell
+    # Em Linux/macOS
+    python3 -m venv venv
+    source venv/bin/activate
 
-Informações sensíveis como chaves de API, segredos e credenciais de banco de dados não são codificadas diretamente no código. Elas são gerenciadas através de variáveis de ambiente, carregadas a partir de um arquivo `.env` (que não deve ser versionado no Git).
+    # Em Windows
+    python -m venv venv
+    venv\Scripts\activate
+    ```
 
-## 5. Deploy
+3.  **Instale as dependências:**
+    ```shell
+    pip install -r requirements.txt
+    ```
 
-### 5.1. Configuração de Produção
+4.  **Execute o servidor:**
+    ```shell
+    python src/main.py
+    ```
 
-1. **Variáveis de Ambiente**: Crie um arquivo `.env` no servidor de produção e preencha com as configurações de produção, incluindo:
-   - `FLASK_ENV=production`
-   - `SECRET_KEY` com um valor longo e aleatório.
-   - `DATABASE_TYPE=postgresql` e as credenciais do banco de dados PostgreSQL.
-   - `CORS_ORIGINS` com a URL do seu frontend em produção.
+    O servidor backend estará em execução e acessível em `http://localhost:5000`.
 
-2. **Servidor WSGI**: Em produção, o servidor de desenvolvimento do Flask não deve ser usado. O projeto está configurado para usar o **Gunicorn** como servidor WSGI. O `Procfile` (`web: gunicorn run:app`) define como iniciar a aplicação.
+### 5.3. Configuração do Frontend
 
-3. **Servir o Frontend**: O frontend (build de produção) deve ser servido por um servidor web como Nginx ou Apache, ou através de uma plataforma de hospedagem de sites estáticos como Vercel ou Netlify.
+1.  **Abra um novo terminal e navegue até a pasta do frontend:**
+    ```shell
+    cd prisma/frontend
+    ```
 
-### 5.2. Exemplo com Docker (Opcional)
+2.  **Instale as dependências:**
+    ```shell
+    npm install
+    ```
 
-Para um deploy mais robusto e isolado, a aplicação pode ser containerizada com Docker.
+3.  **Execute a aplicação:**
+    ```shell
+    npm start
+    ```
 
-**Dockerfile para o Backend:**
-```Dockerfile
-# Usar uma imagem base do Python
-FROM python:3.9-slim
+    A aplicação frontend será aberta automaticamente no seu navegador padrão e estará acessível em `http://localhost:3000`.
 
-# Definir o diretório de trabalho
-WORKDIR /app
+## 6. Endpoints da API
 
-# Copiar o arquivo de dependências
-COPY requirements.txt .
+A seguir, uma descrição dos principais endpoints fornecidos pelo backend.
 
-# Instalar as dependências
-RUN pip install --no-cache-dir -r requirements.txt
+- `POST /login`: Autentica um usuário e retorna um token de sessão.
+- `GET /usuarios`: Retorna a lista de todos os usuários (requer autenticação de administrador).
+- `POST /usuarios`: Cria um novo usuário.
+- `PUT /usuarios/<id>`: Atualiza um usuário existente.
+- `DELETE /usuarios/<id>`: Deleta um usuário.
+- `GET /orgaos`: Retorna a lista de órgãos.
+- `POST /avaliacoes`: Submete uma nova avaliação de maturidade.
+- `GET /avaliacoes`: Retorna o histórico de avaliações de um usuário ou todas as avaliações (para admin).
+- `GET /relatorio_individual/<id>`: Gera e retorna o relatório de uma avaliação específica em formato PDF.
 
-# Copiar o resto do código da aplicação
-COPY . .
-
-# Expor a porta que o Gunicorn irá rodar
-EXPOSE 5000
-
-# Comando para iniciar a aplicação
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "run:app"]
-```
-
-Este Dockerfile pode ser usado para construir uma imagem Docker do backend e implantá-la em qualquer ambiente que suporte containers.
+> **Nota:** Para uma lista completa e detalhada de todos os endpoints, consulte o código-fonte em `backend/src/main.py`.
 
 
